@@ -1,0 +1,21 @@
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/scripts.js"></script>
+
+<!-- /* displayRoutes.hbs page */ -->
+{{#if cityZipOpt }}
+	<script src="/js/jquery.suggest.js"></script>
+	<script >	
+		var haystack = [];
+		var obj = {{{ cityZipOpt }}};
+		//    console.log('obj: ',obj);
+	    haystack = Object.keys(obj);
+		//    console.log( obj['Paterson'] );
+
+	    $(function(){
+	      $('#search').suggest(haystack,{});
+	    });
+
+	</script>
+{{/if}}

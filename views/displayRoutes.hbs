@@ -1,0 +1,93 @@
+<div class = 'row'>
+    <div class="container" style='border: 0px solid red;'>
+        <div style="margin: 0 auto; text-align: left; width: 95%;">
+          <h2 class="form-signin-heading" style="text-align: center;">{{ title }}</h2>
+          <div id="pdfWindow" style="display: block; border: 0px solid red; text-align: center; margin: 0 auto; width: 90%;">hey!</div>
+          <form  name="myForm"  action="">
+            <input type='hidden' name='arrlength' id='arrlength' value = '{{ rowLength }}' >
+
+             <table class="table table-condensed"
+                    style="margin: 0 auto; width: 87%; font-size: 12px; font-weight: bold;">
+
+                <thead>
+                  <tr style="background-color: #1C89D1; ">
+                    <td colspan="3">
+                        <div id="showSuggestions" >
+                            <input type="text" name="search"
+                             id="search" placeholder="Enter City" />
+                        </div>
+                    </td>
+                    <td colspan="1">
+                        <select id="selZip" name="selZip" class="form-control" placeholder="Zip Code"
+                         onChange="javascript: zipSelected()" />
+                            <option>Zip Code</option>
+                        </select>
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="poEntry" name="poEntry"
+                        class="form-control" placeholder="Post Office of Entry.. "/>
+                    </td>
+                    <td colspan="1">
+                        <input type="text" id="perBundle" name="perBundle"
+                        class="form-control" placeholder="Pcs/Bndl"/>
+                    </td>
+                    <td colspan="3">
+                       <select id="eddmOpt" name="eddmOpt" class="form-control"
+                            onChange="javascript: chkBoxScan(null, null)" />
+                            <option value="EDDM1">Postal Customer</option>
+                            <option value="EDDM2">Residential Customer</option>
+							<option value="EDDM3">Business Owner</option>
+                            <option value="EDDM4">P.O. Boxes</option>                            
+                        </select>
+                    </td>
+                  </tr>
+
+                  <tr style='background-color: #ccc; color: #000'>
+                    <td colspan='10' style="height: 5px; text-align: center;">&nbsp;
+                        <a href="javascript: validate_report('size1')" style="color:#000">Print Slip Sheets Small</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="javascript: validate_report('size2')" style="color: #000">Print Slip Sheets Large</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="javascript: validate_report('crReport')" style="color: #000">Print Report</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="Javascript: getPage('post', 'mainPage' )" style="color: #000">Reset</a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th width="4%">&nbsp;</th>
+                    <th width="5%">Route</th>
+                    <th width="8%">Type of Route</th>
+                    <th width="5%" class="tdNumeric">Businesses</th>
+                    <th width="8%" class="tdNumeric">Apartment</th>
+                    <th width="5%" class="tdNumeric">PO_Box</th>
+                    <th width="5%" class="tdNumeric">Residential</th>
+                    <th width="5%" class="tdNumeric">Totals</th>
+                    <th width="5%" class="tdNumeric">Mail Counts</th>
+                    <th width="4%">
+                        <center><input name="chkBx0" id="chkBx0" value="" type="checkbox" onClick="Javascript: chkBoxToggle();"></center></th>
+                  </tr>
+                </thead>
+
+                <tbody id='bodyResponse'>&nbsp;</tbody>
+
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td id="total_bus"    class="tdNumeric">&nbsp;</td>
+                            <td id="total_apt"    class="tdNumeric">&nbsp;</td>
+                            <td id="total_poBox"  class="tdNumeric">&nbsp;</td>
+                            <td id="total_resCtn" class="tdNumeric">&nbsp;</td>
+                            <td id="ttotal"       class="tdNumeric">&nbsp;</td>
+                            <td id="mailTotal"    class="tdNumeric" style="font-size: 16px; color: red">&nbsp;</td>
+
+                        </tr>
+
+                <tr>
+                    <td colspan="11"><button class="btn btn-md btn-primary btn-block "
+                        type="button" onclick= " getPage('post', 'Home' )">Return</button>
+                    </td>
+                </tr>
+            </table>
+          </form>
+        </div>
+    </div>
+</div>
