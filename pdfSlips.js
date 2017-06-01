@@ -55,7 +55,7 @@ module.exports = function(req, res) {
 			myDoc.fontSize(lineFont)
 				.text( `${eddmData.poDest}, NJ ${eddmData.zipCode}`, pos_x, pos_y+190, { width: widthAdj, align: 'center' } )
 				.text( `ECRWSS ${oData['route']}`, pos_x, pos_y+215, { width: widthAdj, align: 'center' } )
-				.text( `${eddmData.poEntry}, NJ 07102`, pos_x, pos_y+235, { width: widthAdj, align: 'center' } )
+				.text( `${eddmData.poEntry}`, pos_x, pos_y+235, { width: widthAdj, align: 'center' } )
 				.text( `${bundleCtn} PCS`, pos_x, pos_y+255, { width: widthAdj, align: 'center' } );
 
 			if( imposition == 1 ) myDoc.addPage();
